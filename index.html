@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regalo Musical</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Fondo doble -->
+  <div class="fondo-decorativo"></div>
+
+  <!-- Pantalla inicial -->
+  <div id="pantalla-inicial">
+    <button id="boton-cambia" class="boton-inicial">hola mi amor</button>
+  </div>
+
+  <!-- Contenido principal -->
+  <div id="contenido-principal" class="animacion-entrada">
+    <div class="container">
+      <img src="cuaderno.png" alt="Cuaderno" class="imagen-cuaderno" />
+
+      <div class="contenido-sobre-cuaderno">
+        <!-- Lado izquierdo -->
+        <div class="texto-lado">
+          <h1>Te quiero mmucho, Lisbeth 💕</h1>
+          <p>
+            Mi amor, hoy es primero de agosto ❤️,<br>
+            nunca es tarde para recordarte lo maravillosa<br>
+            que eres como persona 💖 y gracias<br>
+            por acompañarme y cuidarme 😁😁😁: 😍.
+          </p>
+        </div>
+
+        <!-- Lado derecho -->
+        <div class="vinilo-lado">
+          <div class="letra-cancion" id="letra-cancion"></div>
+          <img src="vinilo.png" alt="Disco Vinilo" class="vinilo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Música -->
+    <audio id="musica" src="tu_cancion.mp3" preload="auto"></audio>
+  </div>
+
+  <!-- Efectos -->
+  <div id="palabras-flotantes"></div>
+  <div id="corazones"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+body {
+  background: url('fondo_papel1_temp.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.fondo-decorativo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('fondo_papel2.png') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Pantalla inicial */
+#pantalla-inicial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-inicial {
+  padding: 20px 40px;
+  font-size: 2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f0c0c0;
+  color: #601010;
+  position: absolute;
+  transition: 0.3s;
+}
+
+/* Contenido principal */
+#contenido-principal {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.animacion-entrada {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
+  pointer-events: none;
+}
+
+.animacion-entrada.mostrar {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Cuaderno */
+.container {
+  position: relative;
+}
+
+.imagen-cuaderno {
+  width: 600px;
+  max-width: 90vw;
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+}
+
+.contenido-sobre-cuaderno {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+/* Texto romántico */
+.texto-lado {
+  width: 35%;
+  color: #3b2715;
+  font-size: 1.1em;
+  line-height: 1.4;
+  margin-left: 7%;
+  text-align: left;
+}
+
+.texto-lado h1 {
+  font-size: 1.6em;
+  font-family: 'Great Vibes', cursive;
+  color: #5a3825;
+}
+
+/* Lado del vinilo y letra */
+.vinilo-lado {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateX(-15%);
+}
+
+.vinilo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  animation: girarIzquierda 6s linear infinite;
+  margin-top: 30px;
+}
+
+@keyframes girarIzquierda {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Letra de la canción con animación */
+.letra-cancion {
+  font-size: 1em;
+  color: #4a2c1a;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+  min-height: 60px;
+}
+
+.linea-activa {
+  animation: aparecerDesaparecer 4s ease forwards;
+}
+
+@keyframes aparecerDesaparecer {
+  0% { opacity: 0; transform: translateY(10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Palabras flotantes */
+#palabras-flotantes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.palabra {
+  position: absolute;
+  font-size: 2.5em;
+  color: rgba(90, 56, 37, 0.9);
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 0 0 6px rgba(255,215,0,0.4);
+  animation: flotar 4s linear forwards;
+}
+
+@keyframes flotar {
+  0% { opacity: 0; transform: translateY(0) scale(0.8); }
+  20% { opacity: 1; transform: translateY(-20px) scale(1); }
+  80% { opacity: 1; transform: translateY(-60px) scale(1); }
+  100% { opacity: 0; transform: translateY(-100px) scale(1.2); }
+}
+
+/* Corazones flotantes */
+#corazones {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.corazon {
+  position: absolute;
+  color: rgba(255, 0, 76, 0.7);
+  font-size: 2em;
+  animation: subirCorazon 5s linear forwards;
+}
+
+@keyframes subirCorazon {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-80vh) scale(1.2); opacity: 0; }
+}
+
